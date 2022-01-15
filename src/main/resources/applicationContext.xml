@@ -11,4 +11,9 @@
           class="ru.oleg.beans.RockMusic">
     </bean>
 
+    <bean id="musicPlayer"
+          class="ru.oleg.beans.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
 </beans>
