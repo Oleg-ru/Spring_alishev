@@ -1,7 +1,8 @@
 package ru.oleg;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.oleg.beans.TestBean;
+import ru.oleg.beans.Music;
+import ru.oleg.beans.MusicPlayer;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,9 +10,10 @@ public class Main {
                 "applicationContext.xml"
         );
 
-        TestBean testBean = context.getBean("testBean", TestBean.class);
+        Music music = context.getBean("musicBean", Music.class);
 
-        System.out.println(testBean.getName());
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
         context.close();
     }
 }
