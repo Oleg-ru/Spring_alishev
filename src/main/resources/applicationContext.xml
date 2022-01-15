@@ -9,32 +9,35 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="ru.oleg.beans.RockMusic">
+          class="ru.oleg.beans.ClassicalMusic"
+          init-method="init"
+          destroy-method="destroy"
+          factory-method="factoryGetClassicalMusic">
     </bean>
-    <bean id="classicalBean"
-          class="ru.oleg.beans.ClassicalMusic">
-    </bean>
-    <bean id="CCCPBean"
-          class="ru.oleg.beans.CCCPMusic">
-    </bean>
+<!--    <bean id="classicalBean"-->
+<!--          class="ru.oleg.beans.ClassicalMusic">-->
+<!--    </bean>-->
+<!--    <bean id="CCCPBean"-->
+<!--          class="ru.oleg.beans.CCCPMusic">-->
+<!--    </bean>-->
 
-    <bean id="musicPlayer"
-          class="ru.oleg.beans.MusicPlayer">
-        <property name="music" ref="musicBean"/>
-<!--        <property name="name" value="XOX"/>-->
-<!--        <property name="volume" value="5000"/>-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.oleg.beans.MusicPlayer">-->
+<!--        <property name="music" ref="musicBean"/>-->
+<!--&lt;!&ndash;        <property name="name" value="XOX"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="volume" value="5000"/>&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
-    <bean id="listMusic"
-          class="ru.oleg.beans.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="musicBean"/>
-                <ref bean="CCCPBean"/>
-                <ref bean="classicalBean"/>
-            </list>
-        </property>
-    </bean>
+<!--    <bean id="listMusic"-->
+<!--          class="ru.oleg.beans.MusicPlayer">-->
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean="musicBean"/>-->
+<!--                <ref bean="CCCPBean"/>-->
+<!--                <ref bean="classicalBean"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 </beans>
