@@ -14,16 +14,9 @@ public class Main {
                 "applicationContext.xml"
         );
 
-        Music music = context.getBean("musicBean", ClassicalMusic.class);
-        System.out.println(music.getSong());
-
-////        Music music = context.getBean("musicBean", Music.class);
-////        MusicPlayer musicPlayer = new MusicPlayer(music);
-//        MusicPlayer musicPlayer = context.getBean("listMusic", MusicPlayer.class);
-//        musicPlayer.playListMusic();
-//
-////        System.out.println(musicPlayer.getName() + " " + musicPlayer.getVolume());
-////        musicPlayer.playMusic();
+        Music music = context.getBean("classicalMusic", ClassicalMusic.class);
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
         context.close();
     }
 }

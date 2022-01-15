@@ -1,5 +1,8 @@
 package ru.oleg.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music{
     private ClassicalMusic() {
     }
