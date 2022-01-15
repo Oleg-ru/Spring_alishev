@@ -11,6 +11,12 @@
     <bean id="musicBean"
           class="ru.oleg.beans.RockMusic">
     </bean>
+    <bean id="classicalBean"
+          class="ru.oleg.beans.ClassicalMusic">
+    </bean>
+    <bean id="CCCPBean"
+          class="ru.oleg.beans.CCCPMusic">
+    </bean>
 
     <bean id="musicPlayer"
           class="ru.oleg.beans.MusicPlayer">
@@ -21,4 +27,14 @@
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
+    <bean id="listMusic"
+          class="ru.oleg.beans.MusicPlayer">
+        <property name="musicList">
+            <list>
+                <ref bean="musicBean"/>
+                <ref bean="CCCPBean"/>
+                <ref bean="classicalBean"/>
+            </list>
+        </property>
+    </bean>
 </beans>
