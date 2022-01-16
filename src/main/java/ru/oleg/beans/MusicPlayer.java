@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
-@Component
 public class MusicPlayer {
 
     @Value("${musicPlayer.name}")
@@ -19,7 +18,6 @@ public class MusicPlayer {
 
 
 
-    @Autowired
     public MusicPlayer(@Qualifier("classicalMusic") Music music1,
                        @Qualifier("rockMusic") Music music2) {
         this.music1 = music1;
